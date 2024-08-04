@@ -18,7 +18,10 @@ from django.contrib import admin
 from django.urls import path
 from app import views as app_views
 
+# 뷰 함수 등록
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("app/", app_views.index),
+    path("app/<int:pk>", app_views.post_detail),
+    path("app/new/", app_views.post_new),
 ]

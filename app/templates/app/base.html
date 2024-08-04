@@ -13,8 +13,18 @@
     {% bootstrap_javascript %}
 </head>
 <body>
+
     <div class="container">
         <h1>장고 입문</h1>
+        {% if user.is_authenticated %}
+            <p>
+                logged by {{ user }}
+                <br>
+            <a href="/accounts/logout/">LogOut</a>
+            </p>
+        {% else %}
+            <a href="/accounts/login/">LogIn</a>
+        {% endif %}
         {% block content %} <!-- 자식 탬플릿의 상속 -->
         {% endblock %}
         <hr>

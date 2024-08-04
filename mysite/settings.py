@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # loacl apps
     "app",
     "catube",
+    "accounts",
 ]
 
 MIDDLEWARE = [

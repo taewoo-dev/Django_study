@@ -131,3 +131,20 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Login 후 이동할 url 주소
 LOGIN_REDIRECT_URL = "/app/"  # 로그인 성공 후 이동할 페이지
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "class": "logging.StreamHandler",
+        },
+    },
+    "loggers": {
+        "django.db.backends": {
+            "handlers": ["console"],
+            "level": "DEBUG",
+        },
+    },
+}
